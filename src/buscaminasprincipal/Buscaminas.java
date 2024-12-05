@@ -14,10 +14,9 @@ public class Buscaminas {
         Tablero tablero = new Tablero(8, 10); 
         PartidaVista vista = new PartidaVista();
         PartidaControlador controlador = new PartidaControlador(jugador, tablero, vista);
-
         boolean ejecutando = true;
 
-        while (ejecutando) {
+        //while (ejecutando) {
             System.out.println("\n|---- Buscaminas ----|");
             System.out.println("1. Crear nueva partida");
             System.out.println("2. Ver puntuación");
@@ -44,7 +43,7 @@ public class Buscaminas {
                     
                     System.out.println("Opción inválida. Intente nuevamente.");
             }
-        }
+        //}
 
         scanner.close();
     }

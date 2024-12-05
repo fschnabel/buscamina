@@ -46,5 +46,9 @@ public class Casillero {
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
+    
+    public String obtenerValor() {
+    	return "  ";
+    }
 }
 

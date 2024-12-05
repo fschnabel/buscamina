@@ -88,16 +88,10 @@ public class Tablero {
     }
 
     // Método para seleccionar casilla
-    public boolean seleccionarCasilla(int fila, int columna) {
-        Casillero casillero = casilleros[fila][columna];
-        
-        if (casillero instanceof CasilleroMina) {
-            // Si es una mina, el juego termina
-            return false;
-        } else {
-            casillero.revelar();
-            return true;
-        }
+    public void seleccionarCasilla(int fila, int columna) {
+    	casilleros[fila][columna].revelar();
+    	
+ 
     }
 
     // Método para verificar si el jugador ha ganado
@@ -115,26 +109,27 @@ public class Tablero {
         return true; // Si todas las casillas seguras han sido reveladas, el jugador gana
     }
 
-    // Método para imprimir el tablero
-    public void imprimirTablero() {
-        for (int i = 0; i < filas; i++) {
-            for (int j = 0; j < columnas; j++) {
-                Casillero casillero = casilleros[i][j];
-                
-                if (casillero.isRevelado()) {
-                    // Si la casilla está revelada, mostramos su tipo
-                    if (casillero instanceof CasilleroMina) {
-                        System.out.print("* "); // Representa una mina
-                    } else if (casillero instanceof CasilleroNumero) {
-                        CasilleroNumero casilleroNumero = (CasilleroNumero) casillero;
-                        System.out.print(casilleroNumero.getValor() + " "); // Muestra el número alrededor
-                    }
-                } else {
-                    // Si la casilla no está revelada, mostramos un símbolo
-                    System.out.print("# "); // Casilla no revelada
-                }
-            }
-            System.out.println(); // Salto de línea al final de cada fila
-        }
+  
+    
+    public void mostrarTablero() {
+    	System.out.print("  ");
+		for (int col = 1; col <= columnas; col++) {
+			System.out.print(col + " ");
+		}
+		System.out.println();
+
+		for (int fila = 0; fila < filas; fila++) {
+			System.out.print((char) ('A' + fila) + " ");
+			for (int col = 0; col < columnas; col++) {
+				Casillero casillero = casilleros[fila][col];
+				if (casillero.isRevelado()) {
+					System.out.print(casillero.obtenerValor());
+				} else {
+
+					System.out.print(". ");
+				}
+			}
+			System.out.println();
+		}
     }
 }

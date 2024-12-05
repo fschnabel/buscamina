@@ -17,4 +17,9 @@ public class CasilleroNumero extends Casillero {
     public void setValor(int valor) {
         this.valor = valor;
     }
+    
+    @Override
+    public String obtenerValor() {
+    	return String.valueOf(valor) + " ";
+    }
 }

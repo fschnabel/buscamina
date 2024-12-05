@@ -12,4 +12,9 @@ public class CasilleroNumero extends Casillero {
     public int getValor() {
         return valor;
     }
+
+    // Se añade el setter para permitir modificar el valor
+    public void setValor(int valor) {
+        this.valor = valor;
+    }
 }

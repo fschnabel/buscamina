@@ -7,7 +7,7 @@ package modelo;
 public class Casillero {
     private int fila;
     private int columna;
-    private boolean revelado;
+    protected boolean revelado;
     private boolean marcado;
     private String tipo; // Puede ser "mina", "numero" o "vacío"
 
@@ -55,8 +55,11 @@ public class Casillero {
     /**
      * Revela el casillero, cambiando su estado a revelado.
      */
-    public void revelar() {
+    public boolean revelar() {
+    	if (this.revelado)
+    		return false;
         this.revelado = true;
+        return true;
     }
 
     /**
@@ -100,6 +103,10 @@ public class Casillero {
      * @return un String que representa el valor del casillero.
      */
     public String obtenerValor() {
-        return "  ";
+    	if (this.revelado) {
+    		return "  ";
+    	}else {
+    		return ". ";
+    	}
     }
 }

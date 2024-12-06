@@ -34,7 +34,7 @@ public class CasilleroMina extends Casillero {
      * @throws PartidaFinalizadaException cuando se revela un casillero con mina.
      */
     @Override
-    public void revelar() {
+    public boolean revelar() {
         super.revelar();
         throw new PartidaFinalizadaException("Juego Terminado");
     }

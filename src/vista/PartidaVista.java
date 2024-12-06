@@ -3,71 +3,76 @@ package vista;
 import java.util.Scanner;
 
 import excepciones.PartidaFinalizadaException;
-import modelo.Casillero;
 import modelo.Jugador;
 import modelo.Tablero;
 
 /**
- * Representa la vista de una partida en el juego de Buscaminas.
- * Maneja la interacción con el usuario, incluyendo la entrada y salida en la consola.
+ * Representa la vista de una partida en el juego de Buscaminas. Maneja la
+ * interacción con el usuario, incluyendo la entrada y salida en la consola.
  */
 public class PartidaVista {
 
-    /**
-     * Inicializa la partida interactuando con el jugador y mostrando el tablero.
-     * Permite al jugador ingresar coordenadas para jugar hasta que la partida termine.
-     *
-     * @param jugador el jugador que participa en la partida.
-     * @param tablero el tablero de la partida.
-     */
-    public void inicializarPartida(Jugador jugador, Tablero tablero) {
-        Scanner scanner = new Scanner(System.in);
+	/**
+	 * Inicializa la partida interactuando con el jugador y mostrando el tablero.
+	 * Permite al jugador ingresar coordenadas para jugar hasta que la partida
+	 * termine.
+	 *
+	 * @param jugador el jugador que participa en la partida.
+	 * @param tablero el tablero de la partida.
+	 */
+	public void inicializarPartida(Jugador jugador, Tablero tablero) {
+		Scanner scanner = new Scanner(System.in);
 
-        // Configurar el tablero
-        tablero.colocarMinas(10);
-        tablero.asignarNumeros();
+		// Configurar el tablero
+		tablero.colocarMinas(10);
+		tablero.asignarNumeros();
 
-        // Pedir el nombre del jugador
-        System.out.println("Ingrese su nombre: ");
-        String nombreJugador = scanner.nextLine();
-        jugador = new Jugador(nombreJugador);
+		// Pedir el nombre del jugador
+		System.out.println("Ingrese su nombre: ");
+		String nombreJugador = scanner.nextLine();
+		jugador = new Jugador(nombreJugador);
 
-        System.out.println("¡Bienvenido, " + jugador.getNombre() + "! Comencemos la partida.");
-        boolean partidaEnCurso = true;
+		System.out.println("¡Bienvenido, " + jugador.getNombre() + "! Comencemos la partida.");
+		boolean partidaEnCurso = true;
 
-        // Bucle principal de la partida
-        while (partidaEnCurso) {
-            tablero.mostrarTablero();
-            System.out.println("Ingrese una coordenada (ejemplo: A1) o escriba 'salir' para finalizar: ");
-            String entrada = scanner.nextLine();
+		tablero.mostrarTablero(partidaEnCurso);
+		while (partidaEnCurso) {
 
-            if (entrada.equalsIgnoreCase("salir")) {
-                partidaEnCurso = false;
-                System.out.println("Partida finalizada. Gracias por jugar, " + jugador.getNombre() + ".");
-            } else {
-                try {
-                    // Convertir la entrada en coordenadas del tablero
-                    int fila = entrada.toUpperCase().charAt(0) - 'A';
-                    int columna = Integer.parseInt(entrada.substring(1)) - 1;
+			System.out.println("Ingrese una coordenada (ejemplo: A1) o escriba 'salir' para finalizar: ");
+			String entrada = scanner.nextLine();
 
-                    // Verificar si las coordenadas son válidas
-                    if (fila >= 0 && fila < tablero.getFilas() && columna >= 0 && columna < tablero.getColumnas()) {
-                        tablero.seleccionarCasilla(fila, columna);
-                    } else {
-                        System.out.println("La coordenada está fuera del tablero. Intenta otra vez.");
-                    }
-                } catch (PartidaFinalizadaException e) {
-                    // Manejar el final de la partida al seleccionar una mina
-                    tablero.mostrarTablero();
-                    partidaEnCurso = false;
-                } catch (Exception e) {
-                    // Manejar entradas inválidas
-                    System.out.println("Entrada inválida. Ingresa una coordenada válida, como A1.");
-                }
-            }
-        }
+			if (entrada.equalsIgnoreCase("salir")) {
+				partidaEnCurso = false;
+				System.out.println("Partida finalizada. Gracias por jugar, " + jugador.getNombre() + ".");
+			} else {
+				try {
+					// Convertir la entrada en coordenadas del tablero
+					int fila = entrada.toUpperCase().charAt(0) - 'A';
+					int columna = Integer.parseInt(entrada.substring(1)) - 1;
 
-        // Cerrar el escáner
-        scanner.close();
-    }
+					// Verificar si las coordenadas son válidas
+					if (fila >= 0 && fila < tablero.getFilas() && columna >= 0 && columna < tablero.getColumnas()) {
+						tablero.seleccionarCasilla(fila, columna);
+					} else {
+						System.out.println("La coordenada está fuera del tablero. Intenta otra vez.");
+					}
+					if (tablero.juegoGanado()) {
+						partidaEnCurso = false;
+						System.out.println("Gano la partida");
+					}
+				} catch (PartidaFinalizadaException e) {
+					System.out.println("Perdio la partida");
+					partidaEnCurso = false;
+				} catch (Exception e) {
+					// Manejar entradas inválidas
+					System.out.println("Entrada inválida. Ingresa una coordenada válida, como A1.");
+				} finally {
+					tablero.mostrarTablero(partidaEnCurso);
+				}
+			}
+		}
+
+		// Cerrar el escáner
+		
+	}
 }

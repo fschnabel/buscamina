@@ -15,7 +15,6 @@ import java.util.Scanner;
  */
 public class PartidaControlador {
     private Partida partida;
-    private Scanner scanner;
     private Tablero tablero;
     private Jugador jugador;
     private PartidaVista partidaVista;
@@ -48,7 +47,6 @@ public class PartidaControlador {
         tablero.colocarMinas(minas);
         tablero.asignarNumeros();
         this.partida = new Partida(jugador, tablero);
-        this.scanner = new Scanner(System.in);
     }
 
     /**

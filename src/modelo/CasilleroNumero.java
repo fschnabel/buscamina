@@ -45,6 +45,18 @@ public class CasilleroNumero extends Casillero {
      */
     @Override
     public String obtenerValor() {
-        return String.valueOf(valor) + " ";
+    	if (this.revelado) {
+    		return String.valueOf(valor) + " ";
+    	}else {
+    		return ". ";
+    	}
+    }
+    
+    /**
+     * Revela el casillero, cambiando su estado a revelado.
+     */
+    public boolean revelar() {
+        super.revelar();
+        return false;
     }
 }

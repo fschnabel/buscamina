@@ -120,11 +120,11 @@ public class Tablero {
 				if (esCoordenadaValida(nuevaFila, nuevaColumna)) {
 					Casillero casilleroActual = casilleros[nuevaFila][nuevaColumna];
 
-					if (casilleroActual instanceof CasilleroVacio) {
-						casilleros[nuevaFila][nuevaColumna] = new CasilleroNumero(nuevaFila, nuevaColumna, 1);
-					} else if (casilleroActual instanceof CasilleroNumero) {
+					if (casilleroActual instanceof CasilleroNumero) {
 						CasilleroNumero casilleroNumero = (CasilleroNumero) casilleroActual;
 						casilleroNumero.setValor(casilleroNumero.getValor() + 1);
+					} else if (!(casilleroActual instanceof CasilleroMina)) {
+						casilleros[nuevaFila][nuevaColumna] = new CasilleroNumero(nuevaFila, nuevaColumna, 1);
 					}
 				}
 			}
@@ -144,10 +144,11 @@ public class Tablero {
 
 	/**
 	 * Revela un casillero en la posición especificada.
+	 * Si el casillero es vacío, revela casilleros adyacentes recursivamente.
 	 *
 	 * @param fila    la fila del casillero.
 	 * @param columna la columna del casillero.
-	 */
+	 */	
 	public void seleccionarCasilla(int fila, int columna) {
 		ultimaFila = fila;
 		ultimaColumna = columna;
@@ -177,8 +178,7 @@ public class Tablero {
 		for (int i = 0; i < filas; i++) {
 			for (int j = 0; j < columnas; j++) {
 				Casillero casillero = casilleros[i][j];
-				if ((casillero instanceof CasilleroVacio || casillero instanceof CasilleroNumero)
-						&& !casillero.isRevelado()) {
+				if (!(casillero instanceof CasilleroMina) && !casillero.isRevelado()) {
 					return false;
 				}
 			}
@@ -188,7 +188,10 @@ public class Tablero {
 
 	/**
 	 * Muestra el tablero en la consola.
-	 */
+	 *
+	 * @param partidaEnCurso true si la partida aún está en progreso; false si ha terminado.
+	 * Si la partida terminó y el jugador pierde, el casillero que causó la derrota se resalta en rojo.
+	 */	
 	public void mostrarTablero(boolean partidaEnCurso) {
 		String rojo = "\u001B[31m";
 		String reset = "\u001B[0m";
@@ -209,7 +212,7 @@ public class Tablero {
 						System.out.print(". ");
 					}
 				} else {
-					if (fila == ultimaFila && col == ultimaColumna) {
+					if (fila == ultimaFila && col == ultimaColumna && !juegoGanado()) {
 						System.out.print(rojo + casillero.obtenerValor() + reset);
 					} else {
 						System.out.print(casillero.obtenerValor());

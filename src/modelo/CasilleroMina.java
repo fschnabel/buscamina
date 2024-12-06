@@ -4,9 +4,10 @@ import excepciones.PartidaFinalizadaException;
 
 /**
  * Representa un casillero que contiene una mina en el juego de Buscaminas.
- * Extiende la funcionalidad de la clase Casillero.
+ * Extiende la funcionalidad de la clase {@link CasilleroVacio}.
+ * Al ser revelado, lanza una excepción para finalizar la partida.
  */
-public class CasilleroMina extends Casillero {
+public class CasilleroMina extends CasilleroVacio {
 
     /**
      * Constructor de la clase CasilleroMina.

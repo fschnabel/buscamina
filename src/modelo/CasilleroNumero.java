@@ -4,7 +4,7 @@ package modelo;
  * Representa un casillero numérico en el juego de Buscaminas.
  * Indica la cantidad de minas cercanas en un casillero.
  */
-public class CasilleroNumero extends Casillero {
+public class CasilleroNumero extends CasilleroVacio {
     private int valor;
 
     /**
@@ -41,7 +41,8 @@ public class CasilleroNumero extends Casillero {
     /**
      * Obtiene el valor representativo del casillero numérico.
      *
-     * @return un String que representa el número de minas adyacentes seguido de un espacio.
+     * @return Un String que representa el número de minas adyacentes si está revelado; 
+     * "." en caso contrario.
      */
     @Override
     public String obtenerValor() {
@@ -54,7 +55,9 @@ public class CasilleroNumero extends Casillero {
     
     /**
      * Revela el casillero, cambiando su estado a revelado.
-     */
+     *
+     * @return true si el casillero fue revelado por primera vez, false si ya estaba revelado.
+     */	
     public boolean revelar() {
         super.revelar();
         return false;

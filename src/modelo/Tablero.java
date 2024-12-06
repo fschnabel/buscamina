@@ -120,11 +120,11 @@ public class Tablero {
 				if (esCoordenadaValida(nuevaFila, nuevaColumna)) {
 					Casillero casilleroActual = casilleros[nuevaFila][nuevaColumna];
 
-					if (casilleroActual instanceof CasilleroVacio) {
-						casilleros[nuevaFila][nuevaColumna] = new CasilleroNumero(nuevaFila, nuevaColumna, 1);
-					} else if (casilleroActual instanceof CasilleroNumero) {
+					if (casilleroActual instanceof CasilleroNumero) {
 						CasilleroNumero casilleroNumero = (CasilleroNumero) casilleroActual;
 						casilleroNumero.setValor(casilleroNumero.getValor() + 1);
+					} else if (!(casilleroActual instanceof CasilleroMina)) {
+						casilleros[nuevaFila][nuevaColumna] = new CasilleroNumero(nuevaFila, nuevaColumna, 1);
 					}
 				}
 			}
@@ -177,8 +177,7 @@ public class Tablero {
 		for (int i = 0; i < filas; i++) {
 			for (int j = 0; j < columnas; j++) {
 				Casillero casillero = casilleros[i][j];
-				if ((casillero instanceof CasilleroVacio || casillero instanceof CasilleroNumero)
-						&& !casillero.isRevelado()) {
+				if (!(casillero instanceof CasilleroMina) && !casillero.isRevelado()) {
 					return false;
 				}
 			}
@@ -209,7 +208,7 @@ public class Tablero {
 						System.out.print(". ");
 					}
 				} else {
-					if (fila == ultimaFila && col == ultimaColumna) {
+					if (fila == ultimaFila && col == ultimaColumna && !juegoGanado()) {
 						System.out.print(rojo + casillero.obtenerValor() + reset);
 					} else {
 						System.out.print(casillero.obtenerValor());

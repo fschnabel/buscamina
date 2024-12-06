@@ -4,7 +4,7 @@ package modelo;
  * Representa un casillero numérico en el juego de Buscaminas.
  * Indica la cantidad de minas cercanas en un casillero.
  */
-public class CasilleroNumero extends Casillero {
+public class CasilleroNumero extends CasilleroVacio {
     private int valor;
 
     /**

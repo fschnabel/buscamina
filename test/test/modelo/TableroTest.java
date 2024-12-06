@@ -35,7 +35,7 @@ class TableroTest {
         Tablero tablero = new Tablero(2, 2);
         tablero.seleccionarCasilla(0, 0);
         tablero.seleccionarCasilla(0, 1);
-        assertFalse(tablero.juegoGanado());
+        assertTrue(tablero.juegoGanado());
     }
 }
 

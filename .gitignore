@@ -1,2 +1,4 @@
 /bin/
 /.metadata
+/out/modelo/*.class
+*.class

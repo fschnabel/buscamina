@@ -144,10 +144,11 @@ public class Tablero {
 
 	/**
 	 * Revela un casillero en la posición especificada.
+	 * Si el casillero es vacío, revela casilleros adyacentes recursivamente.
 	 *
 	 * @param fila    la fila del casillero.
 	 * @param columna la columna del casillero.
-	 */
+	 */	
 	public void seleccionarCasilla(int fila, int columna) {
 		ultimaFila = fila;
 		ultimaColumna = columna;
@@ -187,7 +188,10 @@ public class Tablero {
 
 	/**
 	 * Muestra el tablero en la consola.
-	 */
+	 *
+	 * @param partidaEnCurso true si la partida aún está en progreso; false si ha terminado.
+	 * Si la partida terminó y el jugador pierde, el casillero que causó la derrota se resalta en rojo.
+	 */	
 	public void mostrarTablero(boolean partidaEnCurso) {
 		String rojo = "\u001B[31m";
 		String reset = "\u001B[0m";

@@ -54,7 +54,9 @@ public class CasilleroVacio implements Casillero {
     }
 
     /**
-     * Revela el casillero, cambiando su estado a revelado.
+     * Revela el casillero, cambiando su estado a revelado si no lo estaba previamente.
+     *
+     * @return true si el casillero fue revelado por primera vez, false si ya estaba revelado.
      */
     public boolean revelar() {
     	if (this.revelado)

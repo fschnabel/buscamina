@@ -2,7 +2,6 @@
 
 package controlador;
 
-import modelo.Partida;
 import modelo.Tablero;
 import modelo.Jugador;
 import vista.PartidaVista;
@@ -14,7 +13,6 @@ import java.util.Scanner;
  * Conecta la vista con los modelos de datos para gestionar el flujo del juego.
  */
 public class PartidaControlador {
-    private Partida partida;
     private Tablero tablero;
     private Jugador jugador;
     private PartidaVista partidaVista;
@@ -46,7 +44,6 @@ public class PartidaControlador {
         Tablero tablero = new Tablero(filas, columnas);
         tablero.colocarMinas(minas);
         tablero.asignarNumeros();
-        this.partida = new Partida(jugador, tablero);
     }
 
     /**

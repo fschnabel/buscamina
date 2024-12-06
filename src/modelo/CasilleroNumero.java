@@ -41,7 +41,8 @@ public class CasilleroNumero extends CasilleroVacio {
     /**
      * Obtiene el valor representativo del casillero numérico.
      *
-     * @return un String que representa el número de minas adyacentes seguido de un espacio.
+     * @return Un String que representa el número de minas adyacentes si está revelado; 
+     * "." en caso contrario.
      */
     @Override
     public String obtenerValor() {
@@ -54,7 +55,9 @@ public class CasilleroNumero extends CasilleroVacio {
     
     /**
      * Revela el casillero, cambiando su estado a revelado.
-     */
+     *
+     * @return true si el casillero fue revelado por primera vez, false si ya estaba revelado.
+     */	
     public boolean revelar() {
         super.revelar();
         return false;

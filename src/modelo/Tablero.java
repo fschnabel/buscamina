@@ -1,5 +1,7 @@
 package modelo;
 
+import utils.Colores;
+
 /**
  * Representa el tablero del juego de Buscaminas. Gestiona la disposición de
  * casilleros, asignación de minas, números, y estado del juego.
@@ -193,8 +195,6 @@ public class Tablero {
 	 * Si la partida terminó y el jugador pierde, el casillero que causó la derrota se resalta en rojo.
 	 */	
 	public void mostrarTablero(boolean partidaEnCurso) {
-		String rojo = "\u001B[31m";
-		String reset = "\u001B[0m";
 		System.out.print("  ");
 		for (int col = 1; col <= columnas; col++) {
 			System.out.print(col + " ");
@@ -213,7 +213,7 @@ public class Tablero {
 					}
 				} else {
 					if (fila == ultimaFila && col == ultimaColumna && !juegoGanado()) {
-						System.out.print(rojo + casillero.obtenerValor() + reset);
+						System.out.print(Colores.Color.ROJO.getCodigo() + casillero.obtenerValor() + Colores.Color.RESET.getCodigo());
 					} else {
 						System.out.print(casillero.obtenerValor());
 					}

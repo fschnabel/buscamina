@@ -5,6 +5,7 @@ package controlador;
 import modelo.Tablero;
 import modelo.Jugador;
 import vista.PartidaVista;
+import vista.VistaArchivo;
 
 import java.util.Scanner;
 
@@ -66,7 +67,7 @@ public class PartidaControlador {
 			switch (opcion) {
 			case "1" -> inicializarPartida();
 
-			case "2" -> System.out.println("Tu puntuación es: ");
+			case "2" -> VistaArchivo.leerPuntuacion();
 
 			case "3" -> ejecutando = false;
 			default -> System.out.println("Opción inválida. Intente nuevamente.");

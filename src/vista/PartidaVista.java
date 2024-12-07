@@ -13,6 +13,14 @@ import modelo.Tablero;
  */
 public class PartidaVista {
 
+	
+	/**
+	 * Muestra el menu principal en cual puedo.
+	 * 1.-Iniciar nueva partida
+	 * 2.-Ver puntaje
+	 * 3.- Salir
+	 * @return retorna la opción seleccionada
+	 */
 	public String mostrarMenu() {
 		Scanner scanner = new Scanner(System.in);
 		boolean ejecutando = true;

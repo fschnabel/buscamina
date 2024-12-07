@@ -57,7 +57,14 @@ public class PartidaControlador {
 	public void inicializarPartida() {
 		partidaVista.inicializarPartida(jugador, tablero);
 	}
-
+	
+	
+	/**
+	 * Llama a la vista para mostrar el menu y retorne que opcion que se eligio
+	 * 1.-Iniciar nueva partida
+	 * 2.-Ver puntaje
+	 * 3.- Salir
+	 */
 	public void mostarMenu() {
 		boolean ejecutando = true;
 		while (ejecutando) {

@@ -5,7 +5,7 @@ package controlador;
 import modelo.Tablero;
 import modelo.Jugador;
 import vista.PartidaVista;
-import vista.VistaArchivo;
+import vista.ArchivoVista;
 
 import java.util.Scanner;
 
@@ -61,13 +61,14 @@ public class PartidaControlador {
 	public void mostarMenu() {
 		boolean ejecutando = true;
 		while (ejecutando) {
+			tablero = new Tablero(8, 10);
 
 			String opcion = partidaVista.mostrarMenu();
 
 			switch (opcion) {
 			case "1" -> inicializarPartida();
 
-			case "2" -> VistaArchivo.leerPuntuacion();
+			case "2" -> ArchivoVista.leerPuntuacion();
 
 			case "3" -> ejecutando = false;
 			default -> System.out.println("Opción inválida. Intente nuevamente.");

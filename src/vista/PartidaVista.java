@@ -50,6 +50,7 @@ public class PartidaVista {
 		boolean partidaEnCurso = true;
 
 		tablero.mostrarTablero(partidaEnCurso);
+		long tiempoInicial = System.currentTimeMillis();
 		while (partidaEnCurso) {
 
 			System.out.println("Ingrese una coordenada (ejemplo: A1) o escriba 'salir' para finalizar: ");
@@ -73,7 +74,9 @@ public class PartidaVista {
 					if (tablero.juegoGanado()) {
 						partidaEnCurso = false;
 						System.out.println("Gano la partida");
-						VistaArchivo.escribirDatos(jugador);
+						long tiempoFinal = System.currentTimeMillis();
+						jugador.setTiempoDeJuego((tiempoFinal - tiempoInicial) / 1000);
+						ArchivoVista.escribirDatos(jugador);
 					}
 				} catch (PartidaFinalizadaException e) {
 					System.out.println("Perdio la partida");

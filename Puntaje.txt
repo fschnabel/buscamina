@@ -1,0 +1,4 @@
+jugador:Francisco-------->>>>tiempo:20 segundos
+jugador:Kevin-------->>>>tiempo:120 segundos
+jugador:Xavier-------->>>>tiempo:80 segundos
+jugador:Anderson-------->>>>tiempo:400 segundos

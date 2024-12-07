@@ -11,6 +11,9 @@ public class CasilleroVacio implements Casillero {
     protected boolean revelado;
     private boolean marcado;
     private String tipo; // Puede ser "mina", "numero" o "vacío"
+    public static final String CASILLERO_REVELADO_VACIO = "  ";
+    public static final String CASILLERO_NO_REVELADO = ". ";
+
 
     /**
      * Constructor de la clase Casillero.
@@ -105,11 +108,13 @@ public class CasilleroVacio implements Casillero {
      *
      * @return un String que representa el valor del casillero.
      */
+    @Override
     public String obtenerValor() {
-    	if (this.revelado) {
-    		return "  ";
-    	}else {
-    		return ". ";
-    	}
+        if (this.revelado) {
+            return CASILLERO_REVELADO_VACIO;
+        } else {
+            return CASILLERO_NO_REVELADO;
+        }
     }
+
 }

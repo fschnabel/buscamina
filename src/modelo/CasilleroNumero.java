@@ -11,6 +11,7 @@ import utils.Colores.Color;
  */
 public class CasilleroNumero extends CasilleroVacio {
 	private int valor;
+	private static final String CASILLERO_NO_REVELADO = ". ";
 
 	/**
 	 * Constructor de la clase CasilleroNumero.
@@ -62,7 +63,7 @@ public class CasilleroNumero extends CasilleroVacio {
 			}
 			return color.getCodigo() + String.valueOf(valor) + " " + Colores.Color.RESET.getCodigo();
 		} else {
-			return ". ";
+			return CASILLERO_NO_REVELADO;
 		}
 	}
 

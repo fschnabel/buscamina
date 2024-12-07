@@ -13,6 +13,8 @@ import modelo.Jugador;
  * Los datos incluyen el nombre del jugador y el tiempo de juego.
  */
 public class ArchivoVista {
+	
+	private static final String RUTA_ARCHIVO = "Puntaje.txt";
 
 	/**
      * Lee y muestra en consola las puntuaciones almacenadas en el archivo "Puntaje.txt".

@@ -12,6 +12,7 @@ public class Tablero {
 	private Casillero[][] casilleros;
 	private int ultimaFila;
 	private int ultimaColumna;
+	private static final String CASILLA_OCULTA = ". ";
 
 	/**
 	 * Constructor de la clase Tablero.
@@ -209,7 +210,7 @@ public class Tablero {
 					if (casillero.isRevelado()) {
 						System.out.print(casillero.obtenerValor());
 					} else {
-						System.out.print(". ");
+						System.out.print(CASILLA_OCULTA);
 					}
 				} else {
 					if (fila == ultimaFila && col == ultimaColumna && !juegoGanado()) {

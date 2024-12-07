@@ -8,7 +8,10 @@ A continuación, se detallan los cambios realizados en el repositorio según el 
 
 ### **Diciembre de 2024**
 
-### **6 Diciembre de 2024**
+#### **7 de diciembre de 2024**
+- **Marge pull request #13** *(por:AndersonRamosUPS)*: Refactorización: Cambio de atributos a estáticos en lógica de minas de la rama 'Anderson'
+
+#### **6 Diciembre de 2024**
 - **Marge pull request #12** *(por: XavierMendez)*: Se realiza refactor para funcionamiento del buscaminas 'XavierMendez'
 
 #### **7 de diciembre de 2024**

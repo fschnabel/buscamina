@@ -23,13 +23,16 @@ A continuación, se detallan los cambios realizados en el repositorio según el 
 - **Documentación y pruebas unitarias** *(por fschnabel)*: 
   - Comentarios en el código para facilitar la comprensión.
   - Ejecución de pruebas unitarias para validar la funcionalidad.
-- **Merge pull request #8** *(por fschnabel)*: Integración de más cambios provenientes de la rama `fschnabel`.
+- **Merge pull request #9** *(por fschnabel)*: Integración de más cambios provenientes de la rama `fschnabel`.
 
 #### **5 de diciembre de 2024**
 - **Refactorización para funcionamiento optimizado** *(por fschnabel)*: Implementación de ajustes clave para mejorar la lógica interna del programa.
-- **Merge pull request #7** *(por fschnabel)*: Incorporación de cambios adicionales desde la rama `fschnabel`.
+- **Merge pull request #8** *(por fschnabel)*: Incorporación de cambios adicionales desde la rama `fschnabel`.
 
----
+#### **4 de diciembre de 2024**
+
+- **Merge pull request #7** *(por KevinChila)* Implementación inicial del juego Buscaminas con menú y vista en consola `KevinChila`
+- **Implementación inicial del juego Buscaminas con menú y vista en consola** *(por KevinChila)*: Desarrollo del sistema base del juego con opciones de menú y visualización en consola.
 
 ### **Noviembre de 2024**
 
@@ -57,7 +60,6 @@ A continuación, se detallan los cambios realizados en el repositorio según el 
 - **Merge pull request #1** *(por fschnabel)*: Commit inicial del proyecto.
 - **Commit inicial del proyecto** *(por fschnabel)*: Se estableció la estructura básica del proyecto y se añadieron los primeros archivos de código fuente.
 
----
 
 ## Estructura del Proyecto
 

@@ -32,6 +32,16 @@ public class Jugador {
     public String getNombre() {
         return nombre;
     }
+    
+    /**
+     * Setea el nombre del jugador.
+     *
+     * @param nombre el nombre del jugador.
+     */
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    
 
     /**
      * Obtiene la puntuación acumulada del jugador.

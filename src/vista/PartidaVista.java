@@ -44,7 +44,7 @@ public class PartidaVista {
 		// Pedir el nombre del jugador
 		System.out.println("Ingrese su nombre: ");
 		String nombreJugador = scanner.nextLine();
-		jugador = new Jugador(nombreJugador);
+		jugador.setNombre(nombreJugador);;
 
 		System.out.println("¡Bienvenido, " + jugador.getNombre() + "! Comencemos la partida.");
 		boolean partidaEnCurso = true;

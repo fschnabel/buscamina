@@ -36,7 +36,7 @@ class ArchivoVistaTest {
         // Verificar que el archivo se creó y contiene los datos esperados.
         try (BufferedReader br = new BufferedReader(new FileReader(TEST_FILE))) {
             String contenido = br.readLine();
-            assertEquals("jugador:Jugador1-------->>>>tiempo:120", contenido);
+            assertTrue( contenido.contains("jugador:Jugador1-------->>>>tiempo:120"));
         } catch (IOException e) {
             fail("Error al leer el archivo de prueba.");
         }

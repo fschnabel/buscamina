@@ -2,6 +2,7 @@ package vista;
 
 import java.util.Scanner;
 
+import controlador.PartidaControlador;
 import excepciones.PartidaFinalizadaException;
 import modelo.Jugador;
 import modelo.Tablero;
@@ -11,6 +12,19 @@ import modelo.Tablero;
  * interacción con el usuario, incluyendo la entrada y salida en la consola.
  */
 public class PartidaVista {
+
+	public String mostrarMenu() {
+		Scanner scanner = new Scanner(System.in);
+		boolean ejecutando = true;
+
+		System.out.println("\n|---- Buscaminas ----|");
+		System.out.println("1. Crear nueva partida");
+		System.out.println("2. Ver puntuación");
+		System.out.println("3. Salir");
+		System.out.print("Seleccione una opción: ");
+		return scanner.nextLine();
+
+	}
 
 	/**
 	 * Inicializa la partida interactuando con el jugador y mostrando el tablero.
@@ -73,6 +87,6 @@ public class PartidaVista {
 		}
 
 		// Cerrar el escáner
-		
+
 	}
 }

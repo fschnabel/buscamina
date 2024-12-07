@@ -8,6 +8,9 @@ A continuación, se detallan los cambios realizados en el repositorio según el 
 
 ### **Diciembre de 2024**
 
+### **6 Diciembre de 2024**
+- **Marge pull request #12** *(por: XavierMendez)*: Se realiza refactor para funcionamiento del buscaminas 'XavierMendez'
+
 #### **7 de diciembre de 2024**
 - **Merge pull request #11** *(por KevinChila)*: Integración de cambios provenientes de la rama `KevinChila`.
 - **Refactorización del manejo del menú** *(por KevinChila)*: Mejoras en la gestión del menú, enfocadas en la experiencia de usuario.

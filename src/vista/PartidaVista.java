@@ -73,6 +73,7 @@ public class PartidaVista {
 					if (tablero.juegoGanado()) {
 						partidaEnCurso = false;
 						System.out.println("Gano la partida");
+						VistaArchivo.escribirDatos(jugador);
 					}
 				} catch (PartidaFinalizadaException e) {
 					System.out.println("Perdio la partida");

@@ -9,7 +9,9 @@ A continuación, se detallan los cambios realizados en el repositorio según el 
 ### **Diciembre de 2024**
 
 #### **7 de diciembre de 2024**
-- **Marge pull request #13** *(por:AndersonRamosUPS)*: Refactorización: Cambio de atributos a estáticos en lógica de minas de la rama 'Anderson'
+
+- ** Optimización del módulo de minas ** *(por AndersonRamosUPS)*: Refactorización: Cambio de atributos a estáticos en lógica de minas.
+- **Marge pull request #13** *(por:AndersonRamosUPS)*: Incorporacion de cambios provenientes de la rama `Anderson` 
 
 #### **6 Diciembre de 2024**
 - **Marge pull request #12** *(por: XavierMendez)*: Se realiza refactor para funcionamiento del buscaminas 'XavierMendez'
@@ -39,6 +41,10 @@ A continuación, se detallan los cambios realizados en el repositorio según el 
 
 - **Merge pull request #7** *(por KevinChila)* Implementación inicial del juego Buscaminas con menú y vista en consola `KevinChila`
 - **Implementación inicial del juego Buscaminas con menú y vista en consola** *(por KevinChila)*: Desarrollo del sistema base del juego con opciones de menú y visualización en consola.
+
+#### ** 1 de diciembre**
+- ** Diseño y desarrollo de clases modelo en el sistema ** *(por AndersonRamosUPS)* : Creación e implementación de las clases modelo para el proyecto 
+- ** Merge pull request #4 ** *(por AndersonRamosUPS)*: Incorporación de cambios adicionales desde la rama `Anderson`
 
 ### **Noviembre de 2024**
 
